@@ -71,7 +71,7 @@ $(function () {
         },
 
 
-        to_subscribe: function () {
+        to_subscribe: function () {//
             $("#login").hide();
             $("#subscribe").show();
         }
