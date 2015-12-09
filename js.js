@@ -308,6 +308,7 @@ $(function () {
             this.$el.append(taskView.render().el);
         }
     });
+
     window.usersCollection = new App.Collections.User([]);
     window.tasksCollection = new App.Collections.Task([]);
     var user = new App.Views.User({collection: tasksCollection});
