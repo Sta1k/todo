@@ -20,15 +20,15 @@
                 <h1>Log in</h1>
 
                 <p>
-                    <label for="username" class="uname" data-icon="u"> Your email or username </label>
+                    <label for="username" class="uname" data-icon="u">Username</label>
                     <input id="username" name="username" required="required" type="text"
-                           placeholder="myusername or mymail@mail.com"/>
+                           placeholder=""/>
                 </p>
 
                 <p>
-                    <label for="password" class="youpasswd" data-icon="p"> Your password </label>
+                    <label for="password" class="youpasswd" data-icon="p">Password</label>
                     <input id="password" name="password" required="required" type="password"
-                           placeholder="eg. X8df!90EO"/>
+                           placeholder=""/>
                 </p>
 
                 <p class="keeplogin">
@@ -52,15 +52,15 @@
                 <h1> Sign up </h1>
 
                 <p>
-                    <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
+                    <label for="usernamesignup" class="uname" data-icon="u">Username</label>
                     <input id="usernamesignup" name="usernamesignup" required="required" type="text"
-                           placeholder="Your NickName such as: Vasya"/>
+                           placeholder=""/>
                 </p>
 
                 <p>
-                    <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
+                    <label for="passwordsignup" class="youpasswd" data-icon="p">Password</label>
                     <input id="passwordsignup" name="passwordsignup" required="required" type="password"
-                           placeholder="like a X8df!90EO"/>
+                           placeholder=""/>
                 </p>
 
                 <input type="submit" value="Sign up"/>
@@ -89,8 +89,7 @@
             <label>
                 <input id="option" class="toggle" type="checkbox" <%= completed ? 'checked' : ''%> ><span class="Text"><%= title %></span>
 
-                <div class="share-name" style="display: none"><input type="text"><input class="ok" type="button"
-                                                                                        value="Ok"></div>
+                <div class="share-name" style="display: none"><input type="text"><input class="ok" type="button" value="Ok"></div>
                 <input class="share" type="button" value="share"></label>
 
         </script>

@@ -134,13 +134,31 @@ $(function () {
         el: '.todoapp',
         events: {
             'click .task': 'addTask',
-            'click #logout': 'logout'
+            'click #logout': 'logout',
+            'click .clear': 'clearCompleted'
 
 
+        },
+        destroy: function () {
+            this.model.destroy();
+        },
+        clearCompleted: function () {
+            /*_.each(tasksCollection.models.attributes('completed'), function(task){ task.destroy();
+             });
+             return false;*/
+            for (var i = 0; i < this.collection.length; i++) {
+                var model = this.collection.models[i];
+                if (model.get('completed')) {
+
+                    model.destroy();
+                    i--;
+                }
+            }
         },
 
         logout: function (e) {
             e.preventDefault();
+            console.log('Logout work');
             $('ul').empty();
             this.collection.reset();
             Parse.User.logOut();
@@ -156,8 +174,10 @@ $(function () {
             console.log('button addTask is working');
             var newTaskTitle = $('.input-task').val(),
             user = Parse.User.current(),
-            //
-                newTask = new App.Models.Task();
+            newTask = new App.Models.Task();
+            if(!newTaskTitle)
+            throw new Error('Пустое значение');
+
 
             newTask.save({title: newTaskTitle}, {
                 success: function (object) {
@@ -177,7 +197,7 @@ $(function () {
 
         }
     });
-    App.Views.RemoveTask = Backbone.View.extend({
+    /*App.Views.RemoveTask = Backbone.View.extend({
         el: '.clear',
         events: {
             'click .clear': 'clearCompleted'
@@ -186,9 +206,9 @@ $(function () {
             this.model.destroy();
         },
         clearCompleted: function () {
-            /*_.each(tasksCollection.models.attributes('completed'), function(task){ task.destroy();
+            _.each(tasksCollection.models.attributes('completed'), function(task){ task.destroy();
              });
-             return false;*/
+             return false;
             for (var i = 0; i < this.collection.length; i++) {
                 var model = this.collection.models[i];
                 if (model.get('completed')) {
@@ -199,7 +219,7 @@ $(function () {
             }
         }
 
-    });
+    });*/
     App.Views.Task = Backbone.View.extend({
         tagName: 'li',
         initialize: function () {
@@ -215,9 +235,9 @@ $(function () {
             return this;
         },
         events: {
-            'click .edit': 'editTask',
+            /*'click .edit': 'editTask',*/
             'click .toggle': 'toggleCompleted',
-            'click .share': 'share',
+            'click .share': 'share'
             //'click .ok': 'ok'
 
         },
@@ -314,7 +334,7 @@ $(function () {
     var userView = new App.Views.AddUser({collection: usersCollection});
     var tasksView = new App.Views.Tasks({collection: tasksCollection});
     var addTaskView = new App.Views.AddTask({collection: tasksCollection});
-    var removeTask = new App.Views.RemoveTask({collection: tasksCollection});
+
 
     $('.tasks').html(tasksView.render().el);
 

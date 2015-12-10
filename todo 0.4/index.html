@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Your page title here :)</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+
+
+        <div id="container_demo">
+
+          <a class="hiddenanchor" id="tosubscribe"></a>
+          <a class="hiddenanchor" id="tologin"></a>
+
+          <div id="wrapper">
+            <div id="login" class="animate form" style="display: none">
+              <form autocomplete="on">
+                <h1>Log in</h1>
+
+                <p>
+                  <label for="username" class="uname" data-icon="u">Username</label>
+                  <input id="username" name="username" required="required" type="text"
+                         placeholder=""/>
+                </p>
+
+                <p>
+                  <label for="password" class="youpasswd" data-icon="p">Password</label>
+                  <input id="password" name="password" required="required" type="password"
+                         placeholder=""/>
+                </p>
+
+                <p class="keeplogin">
+                  <input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping"/>
+                  <label for="loginkeeping">Keep me logged in</label>
+                </p>
+                  <input class="login button" type="submit" value="Login"/>
+                <p class="change_link">
+                  Not a member yet ?
+                  <a href="#tosubscribe" class="to_subscribe">Join us</a>
+                </p>
+              </form>
+            </div>
+
+            <div id="subscribe" class="animate form">
+              <form autocomplete="on">
+                <h1> Sign up </h1>
+
+                <p>
+                  <label for="usernamesignup" class="uname" data-icon="u">Username</label>
+                  <input id="usernamesignup" name="usernamesignup" required="required" type="text"
+                         placeholder=""/>
+                </p>
+
+                <p>
+                  <label for="passwordsignup" class="youpasswd" data-icon="p">Password</label>
+                  <input id="passwordsignup" name="passwordsignup" required="required" type="password"
+                         placeholder=""/>
+                </p>
+
+                <input type="submit" value="Sign up"/>
+
+                <p class="change_link">
+                  Already a member ?
+                  <a href="#tologin" class="to_login"> Go and log in </a>
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="todoapp" style="display: none">
+          <form action="" id="addTask">
+
+            <div class="field"><input class="input-task" type="text" placeholder="Ваша новая задача">
+              <input class="task butt" type="submit" value="Добавить задачу"></div>
+
+          </form>
+
+          <div class="tasks">
+            <script type="text/template" id="taskTemplate">
+              <label>
+                <input id="option" class="toggle" type="checkbox" <%= completed ? 'checked' : ''%> ><span class="Text"><%= title %></span>
+
+                <div class="share-name" style="display: none"><input type="text"><input class="ok" type="button" value="Ok"></div>
+                <input class="share" type="button" value="share"></label>
+
+            </script>
+
+          </div>
+          <div >
+
+            <div id="logout_form"><button class="clear">Очистить выполненные</button><button id="logout">Log Out</button></div>
+          </div>
+
+
+          <div style="display: none" class="success"><p>Save Task success</p></div>
+          <div style="display: none" class="error"><p>Task not saving</p></div>
+        </div>
+
+
+        <script src="jquery-1.11.3.js"></script>
+        <script src="underscore.js"></script>
+        <script src="backbone.js"></script>
+        <script src="parse.js"></script>
+        <script src="js.js"></script>
+        <script>
+          Parse.initialize("L7Q08dKlGeHqniJmahZgzx5kZCRZNJouM4Mu6sEZ", "cNEpzwdfhPR5Ih9SHmAvNtestD09r8OJpkvytdvJ");
+        </script>
+
+    </div>
+  </div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
